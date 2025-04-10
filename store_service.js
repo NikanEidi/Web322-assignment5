@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('postgres', 'postgres', 'NikNik@2023', {
-  host: 'db.tcspzguyqpxgxiilwqrv.supabase.co',
+const sequelize = new Sequelize('postgres', 'postgres.tcspzguyqpxgxiilwqrv', 'NikNik@2023', {
+  host: 'aws-0-us-east-1.pooler.supabase.com',
   dialect: 'postgres',
   port: 5432,
   dialectOptions: {
