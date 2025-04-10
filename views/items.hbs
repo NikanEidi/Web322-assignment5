@@ -1,0 +1,30 @@
+<h2>Items</h2>
+<a href="/items/add" class="btn btn-success pull-right mb-3">Add Post</a>
+{{#if items}}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Published</th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each items}}
+        <tr>
+            <td>{{title}}</td>
+            <td>${{price}}</td>
+            <td>{{category}}</td>
+            <td>{{#if published}}Yes{{else}}No{{/if}}</td>
+            <td>{{#formatDate postDate}}{{/formatDate}}</td>
+            <td><a href="/items/delete/{{id}}" class="btn btn-danger">Remove</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>{{message}}</p>
+{{/if}}

@@ -1,0 +1,22 @@
+<h2>Categories</h2>
+<a href="/categories/add" class="btn btn-success pull-right mb-3">Add Category</a>
+{{#if categories}}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Category Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each categories}}
+        <tr>
+            <td>{{category}}</td>
+            <td><a href="/categories/delete/{{id}}" class="btn btn-danger">Remove</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>{{message}}</p>
+{{/if}}

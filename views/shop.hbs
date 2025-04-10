@@ -1,0 +1,33 @@
+<h2>Shop</h2>
+{{#if data.categories}}
+<div class="mb-3">
+    <form method="GET" action="/shop">
+        <select name="category" class="form-control" onchange="this.form.submit()">
+            <option value="">All Categories</option>
+            {{#each data.categories}}
+                <option value="{{id}}">{{category}}</option>
+            {{/each}}
+        </select>
+    </form>
+</div>
+{{/if}}
+
+{{#if data.message}}
+<p>{{data.message}}</p>
+{{else}}
+<div class="row">
+    {{#each data.items}}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="{{featureImage}}" class="card-img-top" alt="{{title}}">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{body}}</p>
+                <p><strong>Price:</strong> ${{price}}</p>
+                <a href="/shop/{{id}}" class="btn btn-primary">View</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
